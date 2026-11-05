@@ -27,8 +27,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-[#FFFDF7] dark:bg-[#121212] border-b border-[rgba(33,29,24,0.1)] dark:border-white/10 sticky top-0 z-40 shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-colors">
-      <div className="mx-auto max-w-[1400px] px-3 md:px-6 flex items-center gap-0.5 md:gap-1 py-0 overflow-x-auto no-scrollbar">
+    <nav className="w-full bg-[#FFFDF7] dark:bg-[#121212] border-b border-[rgba(33,29,24,0.1)] dark:border-white/10 sticky top-0 z-40 shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-colors">
+      <div className="mx-auto max-w-[1400px] w-full px-3 md:px-6 flex items-center flex-nowrap whitespace-nowrap gap-1 py-0 overflow-x-auto overflow-y-hidden no-scrollbar touch-pan-x overscroll-x-contain">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (

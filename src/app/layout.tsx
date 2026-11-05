@@ -57,7 +57,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#F5F1E8] dark:bg-[#0A0A0A] text-[#211D18] dark:text-[#F8FAFC] transition-colors overflow-x-hidden w-full">
+      <body className="min-h-full flex flex-col bg-[#F5F1E8] dark:bg-[#0A0A0A] text-[#211D18] dark:text-[#F8FAFC] transition-colors w-full">
         <ThemeProvider>
           <AuthProvider>
             <BookmarkProvider>
@@ -67,7 +67,7 @@ export default function RootLayout({
               <Header />
               <BreakingTicker />
               <Navbar />
-              <div className="flex-1">{children}</div>
+              <div className="flex-1 w-full overflow-x-hidden">{children}</div>
               <Footer />
             </BookmarkProvider>
           </AuthProvider>
