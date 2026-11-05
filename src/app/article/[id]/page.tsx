@@ -114,24 +114,14 @@ export default async function ArticleDetailPage({ params }: Props) {
             </span>
           </div>
 
-          {/* Headline (Indian Broadsheet Typography) */}
-          <h1 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.2] text-[#211D18] dark:text-white tracking-[-0.02em]">
+          {/* 1. Main Title First */}
+          <h1 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.2] text-[#211D18] dark:text-white tracking-[-0.02em] mb-6">
             {article.title}
           </h1>
 
-          {/* Standfirst / Summary Deck */}
-          {article.summary && (
-            <p className="text-base sm:text-lg text-[#211D18]/90 dark:text-slate-300 leading-relaxed font-normal mt-4 p-4 rounded-xl bg-[#FFFDF7] dark:bg-[#141414] border-l-4 border-[#1C3D5A] dark:border-sky-500 shadow-sm">
-              {article.summary}
-            </p>
-          )}
-
-          {/* Interactive Byline Bar: Like, Discuss, Save, Translate, Share */}
-          <ArticleClientActions article={article} />
-
-          {/* Featured Hero Image Frame */}
+          {/* 2. Next Image */}
           {article.imageUrl && (
-            <div className="my-6 rounded-2xl overflow-hidden border border-[rgba(33,29,24,0.1)] dark:border-white/10 shadow-sm bg-neutral-900">
+            <div className="mb-6 rounded-2xl overflow-hidden border border-[rgba(33,29,24,0.1)] dark:border-white/10 shadow-sm bg-neutral-900">
               <img
                 src={article.imageUrl}
                 alt={article.title}
@@ -145,8 +135,8 @@ export default async function ArticleDetailPage({ params }: Props) {
             </div>
           )}
 
-          {/* Article Full Body Content */}
-          <div className="prose dark:prose-invert max-w-none text-[#211D18] dark:text-slate-200 text-base sm:text-lg leading-[1.8] font-normal my-8 space-y-5">
+          {/* 3. Article Matter / Content (Rendered Only Once) */}
+          <div className="prose dark:prose-invert max-w-none text-[#211D18] dark:text-slate-200 text-base sm:text-lg leading-[1.8] font-normal my-6 space-y-5">
             {article.content ? (
               <div
                 dangerouslySetInnerHTML={{
@@ -163,7 +153,7 @@ export default async function ArticleDetailPage({ params }: Props) {
             )}
           </div>
 
-          {/* Article Tags */}
+          {/* 4. Next Tags */}
           <div className="pt-6 border-t border-[rgba(33,29,24,0.08)] dark:border-white/10 flex flex-wrap items-center gap-2">
             <span className="text-[11px] font-bold text-[#6F675C] dark:text-slate-400 uppercase tracking-wider flex items-center gap-1">
               <Tag size={13} /> Tags:
@@ -186,7 +176,12 @@ export default async function ArticleDetailPage({ params }: Props) {
               ))}
           </div>
 
-          {/* Live Interactive Comment Section */}
+          {/* 5. After that: That Like, Discuss, Save, Translate, Share Bar */}
+          <div className="mt-4">
+            <ArticleClientActions article={article} />
+          </div>
+
+          {/* 6. Live Interactive Comment Section */}
           <CommentSection articleId={article.id} />
         </article>
 
