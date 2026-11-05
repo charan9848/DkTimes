@@ -41,8 +41,8 @@ export default function RootLayout({
             __html: `
               try {
                 const t = localStorage.getItem('theme');
-                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark');
+                if (t === 'dark') {
+                  document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark';
                   document.documentElement.style.setProperty('--paper', '#0A0A0A');
                   document.documentElement.style.setProperty('--paper-card', '#141414');
                   document.documentElement.style.setProperty('--ink', '#F8FAFC');
@@ -50,7 +50,7 @@ export default function RootLayout({
                   document.documentElement.style.setProperty('--line', 'rgba(255, 255, 255, 0.12)');
                   document.documentElement.style.setProperty('--brand-header', '#0F172A');
                 } else {
-                  document.documentElement.classList.remove('dark');
+                  document.documentElement.classList.remove('dark'); document.documentElement.style.colorScheme = 'light';
                 }
               } catch (_) {}
             `,

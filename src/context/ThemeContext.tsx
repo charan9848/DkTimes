@@ -21,7 +21,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Check localStorage key 'theme' (exact REA key)
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    // Default to light mode on web unless explicitly chosen in localStorage
+    const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
 
     setTheme(initialTheme);
     applyTheme(initialTheme);
@@ -30,7 +31,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const applyTheme = (t: Theme) => {
     const root = document.documentElement;
     if (t === 'dark') {
-      root.classList.add('dark');
+      root.classList.add('dark'); root.style.colorScheme = 'dark';
       root.style.setProperty('--paper', '#0A0A0A');
       root.style.setProperty('--paper-card', '#141414');
       root.style.setProperty('--ink', '#F8FAFC');
@@ -38,7 +39,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       root.style.setProperty('--line', 'rgba(255, 255, 255, 0.12)');
       root.style.setProperty('--brand-header', '#0F172A');
     } else {
-      root.classList.remove('dark');
+      root.classList.remove('dark'); root.style.colorScheme = 'light';
       root.style.setProperty('--paper', '#F5F1E8');
       root.style.setProperty('--paper-card', '#FFFDF7');
       root.style.setProperty('--ink', '#211D18');

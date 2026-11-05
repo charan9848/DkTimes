@@ -98,7 +98,95 @@ h1, h2, h3, h4, h5, h6, .font-display, .font-serif {
   );
 }
 
-/* Hide scrollbars across all modern and legacy browsers */
+
+/* ================= THEMED SCROLLBARS (LIGHT & DARK) ================= */
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Global scrollbars for window & containers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F1E8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4CEC3;
+  border-radius: 9999px;
+  border: 1px solid #F5F1E8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B0A89A;
+}
+
+/* Dark mode global scrollbars */
+html.dark ::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 9999px;
+  border: 1px solid #0A0A0A;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3F3F46;
+}
+
+/* Themed scrollbar for Navbar and horizontal feeds */
+.themed-scrollbar::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.themed-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.themed-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(33, 29, 24, 0.2);
+  border-radius: 9999px;
+}
+
+.themed-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(33, 29, 24, 0.4);
+}
+
+html.dark .themed-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html.dark .themed-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+html.dark .themed-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Firefox standard scrollbar */
+* {
+  scrollbar-color: #D4CEC3 transparent;
+  scrollbar-width: thin;
+}
+
+html.dark * {
+  scrollbar-color: #27272A transparent;
+  scrollbar-width: thin;
+}
+
+/* Hide scrollbars utility */
 .no-scrollbar::-webkit-scrollbar {
   display: none !important;
   width: 0 !important;
