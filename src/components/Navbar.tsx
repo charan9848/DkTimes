@@ -29,14 +29,14 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#FFFDF7] dark:bg-[#121212] border-b border-[rgba(33,29,24,0.1)] dark:border-white/10 sticky top-0 z-40 shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-colors">
-      <div className="mx-auto max-w-[1400px] px-4 md:px-6 flex items-center gap-1 py-0 overflow-x-auto no-scrollbar">
+      <div className="mx-auto max-w-[1400px] px-3 md:px-6 flex items-center gap-0.5 md:gap-1 py-0 overflow-x-auto no-scrollbar">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`px-3 md:px-4 py-3 text-[12px] font-bold uppercase tracking-[0.08em] transition shrink-0 flex items-center gap-1.5 ${
+              className={`px-2 md:px-2.5 lg:px-3 py-2.5 text-[11px] lg:text-[12px] font-bold uppercase tracking-[0.05em] transition shrink-0 flex items-center gap-1 ${
                 item.isSpecial
                   ? 'text-red-600 hover:text-red-700 font-extrabold'
                   : isActive
@@ -47,9 +47,12 @@ export default function Navbar() {
               {item.isSpecial && <Play size={12} className="fill-current text-red-600" />}
               <span>{item.label}</span>
               {item.isLocked && (
-                <span className="flex items-center gap-0.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-700/60 px-1.5 py-0.5 rounded text-[9px] font-black tracking-normal ml-0.5">
+                <span
+                  className="inline-flex items-center gap-0.5 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 px-1 py-0.5 rounded text-[9px] font-black tracking-normal ml-0.5"
+                  title="Phase 2 Module · Preview"
+                >
                   <Lock size={9} />
-                  <span>PREVIEW</span>
+                  <span className="hidden xl:inline text-[8px] tracking-wider">PREVIEW</span>
                 </span>
               )}
             </Link>
