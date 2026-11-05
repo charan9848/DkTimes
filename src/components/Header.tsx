@@ -57,9 +57,9 @@ export default function Header() {
 
       {/* Top Utility Bar */}
       <div className="bg-[#1C3D5A] dark:bg-[#0F172A] text-white/90 border-b border-white/10 transition-colors">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-2 flex items-center justify-between text-[11px] font-semibold tracking-wide uppercase">
+        <div className="mx-auto max-w-[1400px] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 flex items-center justify-between text-[10px] sm:text-[11px] font-semibold tracking-wide uppercase">
           <div className="flex items-center gap-2 md:gap-3">
-            <span className="text-white/80">Hyderabad &amp; Amaravati</span>
+            <span className="text-white/85 truncate max-w-[120px] xs:max-w-none">Hyderabad &amp; Amaravati</span>
             <span className="hidden sm:inline text-white/30">•</span>
             <span className="hidden sm:inline text-white/95 font-bold tracking-normal">
               {todayDate || 'Friday, 30 October 2026'}

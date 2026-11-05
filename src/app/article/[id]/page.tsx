@@ -71,7 +71,7 @@ export default async function ArticleDetailPage({ params }: Props) {
   const bottomRelated = latestStories.filter((s) => s.id !== article.id).slice(5, 9);
 
   return (
-    <main className="mx-auto max-w-[1400px] px-4 md:px-6 py-6 md:py-8">
+    <main className="mx-auto max-w-[1400px] px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8">
       {/* Editorial Breadcrumbs */}
       <nav
         aria-label="Breadcrumb"
@@ -125,7 +125,7 @@ export default async function ArticleDetailPage({ params }: Props) {
               <img
                 src={article.imageUrl}
                 alt={article.title}
-                className="w-full max-h-[520px] object-cover"
+                className="w-full max-h-[300px] sm:max-h-[420px] md:max-h-[520px] object-cover"
                 loading="eager"
               />
               <div className="p-3 bg-[#FFFDF7] dark:bg-[#141414] border-t border-[rgba(33,29,24,0.06)] dark:border-white/10 text-[11px] text-[#6F675C] dark:text-slate-400 flex justify-between items-center">

@@ -15,8 +15,8 @@ export default function LockedModuleView({
   description = 'This section is part of the Phase 2 Enterprise Rollout for DK Times.',
 }: Props) {
   return (
-    <div className="mx-auto max-w-[900px] px-4 md:px-6 py-12 md:py-16">
-      <div className="bg-[#FFFDF7] dark:bg-[#141414] rounded-3xl border border-[rgba(33,29,24,0.12)] dark:border-white/10 p-8 md:p-12 shadow-sm text-center relative overflow-hidden">
+    <div className="mx-auto max-w-[900px] px-3 sm:px-4 md:px-6 py-8 sm:py-12 md:py-16">
+      <div className="bg-[#FFFDF7] dark:bg-[#141414] rounded-3xl border border-[rgba(33,29,24,0.12)] dark:border-white/10 p-5 sm:p-8 md:p-12 shadow-sm text-center relative overflow-hidden">
         {/* Subtle decorative background glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 dark:bg-amber-400/5 rounded-full blur-3xl pointer-events-none" />
 

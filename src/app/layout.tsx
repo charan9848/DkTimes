@@ -57,7 +57,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#F5F1E8] dark:bg-[#0A0A0A] text-[#211D18] dark:text-[#F8FAFC] transition-colors">
+      <body className="min-h-full flex flex-col bg-[#F5F1E8] dark:bg-[#0A0A0A] text-[#211D18] dark:text-[#F8FAFC] transition-colors overflow-x-hidden w-full">
         <ThemeProvider>
           <AuthProvider>
             <BookmarkProvider>

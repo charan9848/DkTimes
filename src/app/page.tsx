@@ -80,7 +80,7 @@ export default async function HomePage() {
 
   return (
     <main>
-      <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-6 md:py-8 space-y-12">
+      <div className="mx-auto max-w-[1400px] px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8 space-y-8 sm:space-y-10 md:space-y-12">
         {/* ================= HERO EDITORIAL GRID ================= */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* LEAD STORY (7 cols) */}
@@ -88,7 +88,7 @@ export default async function HomePage() {
             <article className="bg-[#FFFDF7] dark:bg-[#141414] rounded-2xl border border-[rgba(33,29,24,0.1)] dark:border-white/10 overflow-hidden shadow-sm h-full flex flex-col justify-between hover:shadow-md transition">
               <div>
                 {/* High-Clarity Framed Image Container */}
-                <div className="relative w-full h-[320px] sm:h-[400px] bg-neutral-900 overflow-hidden flex items-center justify-center">
+                <div className="relative w-full h-[240px] sm:h-[340px] md:h-[400px] bg-neutral-900 overflow-hidden flex items-center justify-center">
                   {leadArticle.imageUrl && (
                     <div
                       className="absolute inset-0 bg-cover bg-center blur-2xl opacity-40 scale-110"
@@ -111,7 +111,7 @@ export default async function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-6 md:p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   {/* Category & Proper Date / Time */}
                   <div className="flex flex-wrap items-center gap-2 text-[11px] mb-2 font-medium text-[#6F675C] dark:text-slate-400">
                     <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#1C3D5A] dark:text-sky-400">
