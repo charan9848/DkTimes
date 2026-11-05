@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Play } from 'lucide-react';
+import { Play, Lock } from 'lucide-react';
 
 interface NavItem {
   label: string;
   href: string;
   isSpecial?: boolean;
+  isLocked?: boolean;
 }
 
 const navItems: NavItem[] = [
@@ -15,12 +16,12 @@ const navItems: NavItem[] = [
   { label: 'All News', href: '/news' },
   { label: 'Telangana', href: '/news/telangana' },
   { label: 'Andhra Pradesh', href: '/news/andhra_pradesh' },
-  { label: 'Politics', href: '/news/politics' },
-  { label: 'Technology', href: '/news/technology' },
-  { label: 'Entertainment', href: '/news/entertainment' },
-  { label: 'Sports', href: '/news/sports' },
-  { label: 'Jobs', href: '/jobs' },
-  { label: 'Marketplace', href: '/marketplace' },
+  { label: 'Politics', href: '/news/politics', isLocked: true },
+  { label: 'Technology', href: '/news/technology', isLocked: true },
+  { label: 'Entertainment', href: '/news/entertainment', isLocked: true },
+  { label: 'Sports', href: '/news/sports', isLocked: true },
+  { label: 'Jobs', href: '/jobs', isLocked: true },
+  { label: 'Marketplace', href: '/marketplace', isLocked: true },
 ];
 
 export default function Navbar() {
@@ -44,7 +45,13 @@ export default function Navbar() {
               }`}
             >
               {item.isSpecial && <Play size={12} className="fill-current text-red-600" />}
-              {item.label}
+              <span>{item.label}</span>
+              {item.isLocked && (
+                <span className="flex items-center gap-0.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-700/60 px-1.5 py-0.5 rounded text-[9px] font-black tracking-normal ml-0.5">
+                  <Lock size={9} />
+                  <span>PREVIEW</span>
+                </span>
+              )}
             </Link>
           );
         })}

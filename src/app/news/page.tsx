@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { getPaginatedNews } from '@/lib/news-service';
 import { formatEditorialDate } from '@/lib/date-utils';
 import TimeAgo from '@/components/TimeAgo';
-import { Newspaper, Clock, ArrowRight, Filter, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Newspaper, Clock, ArrowRight, Filter, ChevronLeft, ChevronRight, Lock } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -80,21 +80,27 @@ export default async function AllNewsPage({ searchParams }: PageProps) {
           { label: 'All Stories (500+)', href: '/news', active: true },
           { label: 'Telangana', href: '/news/telangana' },
           { label: 'Andhra Pradesh', href: '/news/andhra_pradesh' },
-          { label: 'Politics', href: '/news/politics' },
-          { label: 'Technology', href: '/news/technology' },
-          { label: 'Entertainment', href: '/news/entertainment' },
-          { label: 'Sports', href: '/news/sports' },
+          { label: 'Politics', href: '/news/politics', locked: true },
+          { label: 'Technology', href: '/news/technology', locked: true },
+          { label: 'Entertainment', href: '/news/entertainment', locked: true },
+          { label: 'Sports', href: '/news/sports', locked: true },
         ].map((c) => (
           <Link
             key={c.label}
             href={c.href}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition shrink-0 ${
+            className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition shrink-0 flex items-center gap-1.5 ${
               c.active
                 ? 'bg-[#1C3D5A] dark:bg-sky-600 text-white shadow-sm'
                 : 'bg-[#FFFDF7] dark:bg-[#141414] text-[#6F675C] dark:text-slate-300 hover:text-[#211D18] dark:hover:text-white border border-[rgba(33,29,24,0.1)] dark:border-white/10'
             }`}
           >
-            {c.label}
+            <span>{c.label}</span>
+            {c.locked && (
+              <span className="flex items-center gap-0.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-300 dark:border-amber-700/60 px-1.5 py-0.5 rounded text-[9px] font-black tracking-normal ml-0.5">
+                <Lock size={9} />
+                <span>PREVIEW</span>
+              </span>
+            )}
           </Link>
         ))}
       </div>

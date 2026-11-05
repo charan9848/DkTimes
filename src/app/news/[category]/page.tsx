@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getCategoryNews, getLatestNews } from '@/lib/news-service';
 import { formatEditorialDate } from '@/lib/date-utils';
 import TimeAgo from '@/components/TimeAgo';
+import LockedModuleView from '@/components/LockedModuleView';
 import { Clock, ArrowRight, ChevronRight, ChevronLeft } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -12,6 +13,8 @@ interface Props {
   searchParams: Promise<{ page?: string }>;
 }
 
+const lockedCategories = ['politics', 'technology', 'entertainment', 'sports'];
+
 export default async function CategoryPage({ params, searchParams }: Props) {
   const { category } = await params;
   const resolvedSearchParams = await searchParams;
@@ -19,6 +22,19 @@ export default async function CategoryPage({ params, searchParams }: Props) {
   const pageSize = 24;
 
   const decodedCategory = decodeURIComponent(category).replace('_', ' ');
+
+  // If this category is part of the locked Phase 2 preview
+  if (lockedCategories.includes(category.toLowerCase())) {
+    return (
+      <main>
+        <LockedModuleView
+          title={decodedCategory.toUpperCase()}
+          categoryName={decodedCategory}
+          description={`The ${decodedCategory} editorial archive and feeds are configured for the Phase 2 Enterprise Release.`}
+        />
+      </main>
+    );
+  }
 
   // Fetch articles belonging to this category
   const { articles, totalCategoryCount } = await getCategoryNews(

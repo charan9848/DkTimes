@@ -23,6 +23,8 @@ import {
   ArrowRight,
   Newspaper,
   Compass,
+  Lock,
+  Sparkles,
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -381,78 +383,68 @@ export default async function HomePage() {
           </section>
         )}
 
-        {/* ================= CATEGORY 3: POLITICS & POLICY ================= */}
-        {politicsStories.length > 0 && (
-          <section className="pt-6 border-t border-[rgba(33,29,24,0.1)] dark:border-white/10">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-2.5 h-6 bg-red-600 rounded-sm" />
-                <div>
+        {/* ================= CATEGORY 3: POLITICS & POLICY (PHASE 2 LOCKED) ================= */}
+        <section className="pt-6 border-t border-[rgba(33,29,24,0.1)] dark:border-white/10">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-2.5 h-6 bg-red-600 rounded-sm" />
+              <div>
+                <div className="flex items-center gap-2">
                   <h2 className="font-serif font-black text-2xl text-[#211D18] dark:text-white">
                     Politics & Governance
                   </h2>
-                  <p className="text-xs text-[#6F675C] dark:text-slate-400">
-                    పార్టీలు, రాజకీయ వ్యూహాలు మరియు విధాన నిర్ణయాలు
-                  </p>
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                    <Lock size={10} /> Phase 2 Module
+                  </span>
                 </div>
+                <p className="text-xs text-[#6F675C] dark:text-slate-400">
+                  పార్టీలు, రాజకీయ వ్యూహాలు మరియు విధాన నిర్ణయాలు · Enterprise Politics & Policy Intelligence
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/news/politics"
+              className="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1"
+            >
+              Preview Module <ChevronRight size={14} />
+            </Link>
+          </div>
+
+          <div className="relative overflow-hidden rounded-2xl border border-dashed border-amber-500/30 bg-gradient-to-br from-amber-500/[0.04] via-transparent to-red-500/[0.04] p-8 text-center">
+            <div className="mx-auto max-w-xl flex flex-col items-center">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800 flex items-center justify-center mb-3 shadow-inner">
+                <Lock size={22} className="animate-pulse" />
+              </div>
+              <h3 className="font-serif font-black text-lg md:text-xl text-[#211D18] dark:text-white">
+                Politics & Election Intelligence Desk
+              </h3>
+              <p className="text-xs text-[#6F675C] dark:text-slate-400 mt-2 max-w-md leading-relaxed">
+                Live assembly tracking, election constituency heatmaps, party manifesto archives, and verified political op-eds are part of the Phase 2 Enterprise feature package.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
+                <span className="text-[11px] px-2.5 py-1 rounded-md bg-white dark:bg-[#1a1a1a] text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">
+                  Assembly Live Ticker
+                </span>
+                <span className="text-[11px] px-2.5 py-1 rounded-md bg-white dark:bg-[#1a1a1a] text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">
+                  Constituency Heatmaps
+                </span>
+                <span className="text-[11px] px-2.5 py-1 rounded-md bg-white dark:bg-[#1a1a1a] text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">
+                  Candidate Portfolios
+                </span>
+                <span className="text-[11px] px-2.5 py-1 rounded-md bg-white dark:bg-[#1a1a1a] text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">
+                  Op-Ed Verification Desk
+                </span>
               </div>
               <Link
                 href="/news/politics"
-                className="text-xs font-bold text-[#1C3D5A] dark:text-sky-400 hover:underline flex items-center gap-1"
+                className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#211D18] dark:bg-white text-white dark:text-[#211D18] text-xs font-bold hover:opacity-90 transition shadow-sm"
               >
-                View All Politics News <ChevronRight size={14} />
+                <Sparkles size={13} />
+                Explore Phase 2 Preview & Roadmap
               </Link>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {politicsStories.map((story) => (
-                <article
-                  key={story.id}
-                  className="bg-[#FFFDF7] dark:bg-[#141414] rounded-xl border border-[rgba(33,29,24,0.1)] dark:border-white/10 overflow-hidden shadow-sm hover:border-[#1C3D5A]/40 dark:hover:border-sky-500/40 transition flex flex-col justify-between group"
-                >
-                  <div>
-                    <div className="aspect-[16/10] bg-neutral-900 overflow-hidden relative">
-                      <img
-                        src={story.imageUrl || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600'}
-                        alt={story.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center justify-between text-[10px] text-[#6F675C] dark:text-slate-400 mb-1.5 font-medium">
-                        <span className="font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
-                          {story.category || 'Politics'}
-                        </span>
-                        <TimeAgo timestamp={story.publishedAt} />
-                      </div>
-                      <Link href={`/article/${story.id}`}>
-                        <h3 className="font-serif font-bold text-sm text-[#211D18] dark:text-slate-100 group-hover:text-[#1C3D5A] dark:group-hover:text-sky-400 transition line-clamp-2 leading-snug">
-                          {story.title}
-                        </h3>
-                      </Link>
-                      <p className="text-xs text-[#6F675C] dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                        {story.summary}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="px-4 py-3 border-t border-[rgba(33,29,24,0.06)] dark:border-white/10 flex items-center justify-between text-xs">
-                    <span className="text-[10px] text-[#6F675C] dark:text-slate-400 font-medium">
-                      {formatEditorialDate(story.publishedAt)}
-                    </span>
-                    <Link
-                      href={`/article/${story.id}`}
-                      className="font-bold text-xs text-[#1C3D5A] dark:text-sky-400 group-hover:underline flex items-center gap-1"
-                    >
-                      Read More <ArrowRight size={12} />
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-        )}
+          </div>
+        </section>
 
         {/* ================= SHOW ALL NEWS CONTINUOUS STREAM ================= */}
         <section className="pt-8 border-t-2 border-[rgba(33,29,24,0.15)] dark:border-white/10">
@@ -579,92 +571,93 @@ export default async function HomePage() {
           </section>
         )}
 
-        {/* ================= JOBS & MARKETPLACE SPLIT ================= */}
+        {/* ================= JOBS & MARKETPLACE SPLIT (PHASE 2 LOCKED) ================= */}
         <section className="pt-6 border-t border-[rgba(33,29,24,0.1)] dark:border-white/10 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* JOBS BOARD */}
-          <div className="bg-[#FFFDF7] dark:bg-[#141414] rounded-xl border border-[rgba(33,29,24,0.1)] dark:border-white/10 p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-5">
-              <div className="flex items-center gap-2.5">
-                <div className="bg-[#1C3D5A] dark:bg-sky-700 text-white p-2 rounded-lg">
-                  <Briefcase size={16} />
+          {/* JOBS BOARD - PHASE 2 */}
+          <div className="bg-[#FFFDF7] dark:bg-[#141414] rounded-2xl border border-dashed border-amber-500/30 p-6 shadow-sm relative overflow-hidden flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="bg-[#1C3D5A] dark:bg-sky-700 text-white p-2 rounded-lg">
+                    <Briefcase size={16} />
+                  </div>
+                  <div>
+                    <h2 className="font-serif font-black text-lg text-[#211D18] dark:text-white">Local Careers & Jobs</h2>
+                    <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-600 dark:text-amber-400">
+                      <Lock size={10} /> Phase 2 Module · Preview Mode
+                    </span>
+                  </div>
                 </div>
-                <h2 className="font-serif font-black text-lg text-[#211D18] dark:text-white">Local Careers & Jobs</h2>
+                <Link href="/jobs" className="text-[10px] font-bold uppercase tracking-[0.1em] text-amber-600 dark:text-amber-400 hover:underline">
+                  View Preview →
+                </Link>
               </div>
-              <Link href="/jobs" className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#1C3D5A] dark:text-sky-400">
-                View all →
-              </Link>
+
+              <div className="py-6 px-4 rounded-xl bg-amber-500/[0.04] border border-amber-500/10 text-center my-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800 flex items-center justify-center mx-auto mb-2.5">
+                  <Briefcase size={18} />
+                </div>
+                <h3 className="font-serif font-bold text-sm text-[#211D18] dark:text-white">Enterprise Recruitment Portal</h3>
+                <p className="text-xs text-[#6F675C] dark:text-slate-400 mt-1 max-w-sm mx-auto leading-relaxed">
+                  Candidate screening, employer dashboard, instant WhatsApp applications, and resume parsing are scheduled for the Phase 2 rollout.
+                </p>
+                <div className="flex flex-wrap justify-center gap-1.5 mt-3">
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-white dark:bg-[#1a1a1a] text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">Employer Dashboard</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-white dark:bg-[#1a1a1a] text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">Resume Matcher</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-white dark:bg-[#1a1a1a] text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">Direct WhatsApp Apply</span>
+                </div>
+              </div>
             </div>
 
-            <div className="space-y-3">
-              {(jobs.length > 0
-                ? jobs
-                : [
-                    { id: 'j1', title: 'Senior React / Next.js Developer', company: 'TCS Innovation Hub', location: 'Hyderabad', salary: '₹45,000/mo' },
-                    { id: 'j2', title: 'Staff Reporter — Telugu News', company: 'Sakshi Media Corp', location: 'Vijayawada', salary: '₹30,000/mo' },
-                    { id: 'j3', title: 'DevOps & Cloud Engineer', company: 'Infosys SEZ', location: 'Hyderabad', salary: '₹65,000/mo' },
-                    { id: 'j4', title: 'Hospital Accounts Administrator', company: 'KIMS Hospitals', location: 'Secunderabad', salary: '₹28,000/mo' },
-                  ]
-              ).map((job) => (
-                <div
-                  key={job.id}
-                  className="flex items-center justify-between p-3.5 rounded-lg border border-[rgba(33,29,24,0.08)] dark:border-white/10 hover:border-[#1C3D5A]/40 transition"
-                >
-                  <div>
-                    <h3 className="text-xs md:text-sm font-bold text-[#211D18] dark:text-white">{job.title}</h3>
-                    <p className="text-[11px] text-[#6F675C] dark:text-slate-400">
-                      {job.company} · {job.location}
-                    </p>
-                  </div>
-                  <span className="bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-full border border-emerald-200 dark:border-emerald-800">
-                    {job.salary || 'Competitive'}
-                  </span>
-                </div>
-              ))}
+            <div className="mt-4 pt-3 border-t border-[rgba(33,29,24,0.06)] dark:border-white/10 flex items-center justify-between text-xs">
+              <span className="text-[11px] text-[#6F675C] dark:text-slate-400">Available with developer maintenance contract</span>
+              <Link href="/jobs" className="font-bold text-xs text-[#1C3D5A] dark:text-sky-400 hover:underline flex items-center gap-1">
+                Preview Interface <ArrowRight size={12} />
+              </Link>
             </div>
           </div>
 
-          {/* MARKETPLACE CLASSIFIEDS */}
-          <div className="bg-[#FFFDF7] dark:bg-[#141414] rounded-xl border border-[rgba(33,29,24,0.1)] dark:border-white/10 p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-5">
-              <div className="flex items-center gap-2.5">
-                <div className="bg-amber-600 text-white p-2 rounded-lg">
-                  <ShoppingBag size={16} />
+          {/* MARKETPLACE CLASSIFIEDS - PHASE 2 */}
+          <div className="bg-[#FFFDF7] dark:bg-[#141414] rounded-2xl border border-dashed border-amber-500/30 p-6 shadow-sm relative overflow-hidden flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="bg-amber-600 text-white p-2 rounded-lg">
+                    <ShoppingBag size={16} />
+                  </div>
+                  <div>
+                    <h2 className="font-serif font-black text-lg text-[#211D18] dark:text-white">Marketplace & Classifieds</h2>
+                    <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-600 dark:text-amber-400">
+                      <Lock size={10} /> Phase 2 Module · Preview Mode
+                    </span>
+                  </div>
                 </div>
-                <h2 className="font-serif font-black text-lg text-[#211D18] dark:text-white">Marketplace Classifieds</h2>
+                <Link href="/marketplace" className="text-[10px] font-bold uppercase tracking-[0.1em] text-amber-600 dark:text-amber-400 hover:underline">
+                  View Preview →
+                </Link>
               </div>
-              <Link href="/marketplace" className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#1C3D5A] dark:text-sky-400">
-                View all →
-              </Link>
+
+              <div className="py-6 px-4 rounded-xl bg-amber-500/[0.04] border border-amber-500/10 text-center my-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800 flex items-center justify-center mx-auto mb-2.5">
+                  <ShoppingBag size={18} />
+                </div>
+                <h3 className="font-serif font-bold text-sm text-[#211D18] dark:text-white">Peer-to-Peer Classifieds & Real Estate</h3>
+                <p className="text-xs text-[#6F675C] dark:text-slate-400 mt-1 max-w-sm mx-auto leading-relaxed">
+                  Verified seller badges, escrow payments, real estate 360 tours, and multi-district listings unlock in Phase 2.
+                </p>
+                <div className="flex flex-wrap justify-center gap-1.5 mt-3">
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-white dark:bg-[#1a1a1a] text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">Verified Seller KYC</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-white dark:bg-[#1a1a1a] text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">Real Estate Grid</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-white dark:bg-[#1a1a1a] text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-white/10 font-medium">Auto WhatsApp Leads</span>
+                </div>
+              </div>
             </div>
 
-            <div className="space-y-3">
-              {(marketplace.length > 0
-                ? marketplace
-                : [
-                    { id: 'm1', title: '3 BHK Luxury Apartment in Gachibowli', location: 'Hyderabad', price: '₹1.2 Cr', whatsappNumber: '919876543210' },
-                    { id: 'm2', title: 'Honda City 2024 — Single Owner 12K km', location: 'Visakhapatnam', price: '₹11.5 Lakh', whatsappNumber: '919876543211' },
-                    { id: 'm3', title: 'Commercial Office Space 2,400 sq.ft', location: 'Vijayawada', price: '₹85,000/mo', whatsappNumber: '919876543212' },
-                  ]
-              ).map((item) => (
-                <div
-                  key={item.id}
-                  className="flex items-center justify-between p-3.5 rounded-lg border border-[rgba(33,29,24,0.08)] dark:border-white/10 hover:border-amber-300 transition"
-                >
-                  <div>
-                    <h3 className="text-xs md:text-sm font-bold text-[#211D18] dark:text-white">{item.title}</h3>
-                    <p className="text-[11px] text-[#6F675C] dark:text-slate-400">{item.location}</p>
-                    <p className="text-xs font-black text-amber-700 dark:text-amber-400 mt-0.5">{item.price}</p>
-                  </div>
-                  <a
-                    href={`https://wa.me/${(item as any).whatsappNumber || ''}?text=Hi,%20I%20am%20inquiring%20about%20your%20listing%20"${encodeURIComponent(item.title || '')}"%20on%20DK%20Times`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 transition shadow-sm"
-                  >
-                    <MessageCircle size={12} /> WhatsApp
-                  </a>
-                </div>
-              ))}
+            <div className="mt-4 pt-3 border-t border-[rgba(33,29,24,0.06)] dark:border-white/10 flex items-center justify-between text-xs">
+              <span className="text-[11px] text-[#6F675C] dark:text-slate-400">Available with developer maintenance contract</span>
+              <Link href="/marketplace" className="font-bold text-xs text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
+                Preview Interface <ArrowRight size={12} />
+              </Link>
             </div>
           </div>
         </section>
