@@ -25,6 +25,7 @@ import {
   Compass,
   Lock,
   Sparkles,
+  Megaphone,
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -661,6 +662,70 @@ export default async function HomePage() {
               <Link href="/marketplace" className="font-bold text-xs text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
                 Preview Interface <ArrowRight size={12} />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= SPONSORED & PROMOTIONS AD SLOT (PREVIEW) ================= */}
+        <section className="pt-6">
+          <div className="bg-[#FFFDF7] dark:bg-[#141414] rounded-2xl border-2 border-dashed border-amber-500/35 dark:border-amber-400/25 p-6 md:p-8 shadow-sm relative overflow-hidden">
+            {/* Background ambient glow */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/[0.04] dark:bg-amber-400/[0.03] rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+              <div className="max-w-3xl">
+                {/* Eyebrow Pill */}
+                <div className="flex flex-wrap items-center gap-2 mb-2.5">
+                  <span className="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider">
+                    <Sparkles size={11} /> Sponsored Ad Placement Slot
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#6F675C] dark:text-slate-400">
+                    Leaderboard · 1400 × 200 Display
+                  </span>
+                </div>
+
+                {/* Main Headline */}
+                <h3 className="font-serif font-black text-xl md:text-2xl text-[#211D18] dark:text-white leading-tight">
+                  You Can Place Promotions &amp; Sponsored Partner Ads Here
+                </h3>
+                <p className="text-xs font-semibold text-amber-700 dark:text-amber-400 mt-0.5 mb-2">
+                  (మీ వ్యాపార ప్రకటనలు, ప్రమోషన్లు మరియు బ్రాండ్ ప్రచారాలను ఇక్కడ సులభంగా ప్రదర్శించవచ్చు)
+                </p>
+
+                {/* Description */}
+                <p className="text-xs md:text-sm text-[#6F675C] dark:text-slate-300 leading-relaxed">
+                  Engage hundreds of thousands of verified readers across Telangana and Andhra Pradesh. Dynamically configure promotional banners, real estate projects, business launches, or programmatic ad networks directly through your editorial dashboard.
+                </p>
+
+                {/* Feature Tags */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-[#F5F1E8] dark:bg-white/5 text-[#211D18] dark:text-slate-200 border border-[rgba(33,29,24,0.1)] dark:border-white/10">
+                    ✓ Custom Click-Through Link
+                  </span>
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-[#F5F1E8] dark:bg-white/5 text-[#211D18] dark:text-slate-200 border border-[rgba(33,29,24,0.1)] dark:border-white/10">
+                    ✓ Telangana &amp; AP Regional Targeting
+                  </span>
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-[#F5F1E8] dark:bg-white/5 text-[#211D18] dark:text-slate-200 border border-[rgba(33,29,24,0.1)] dark:border-white/10">
+                    ✓ Direct WhatsApp Lead Generation
+                  </span>
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-[#F5F1E8] dark:bg-white/5 text-[#211D18] dark:text-slate-200 border border-[rgba(33,29,24,0.1)] dark:border-white/10">
+                    ✓ Google AdSense &amp; Banner Ready
+                  </span>
+                </div>
+              </div>
+
+              {/* Action Side */}
+              <div className="w-full lg:w-auto shrink-0 flex flex-col sm:flex-row lg:flex-col gap-2">
+                <a
+                  href="mailto:ads@dktimesnews.com?subject=Advertising%20Inquiry%20-%20DK%20Times"
+                  className="bg-[#1C3D5A] hover:bg-[#142A3E] dark:bg-sky-600 dark:hover:bg-sky-500 text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-sm transition text-center flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Megaphone size={14} /> Promote Your Brand Here →
+                </a>
+                <span className="text-[10px] text-[#6F675C] dark:text-slate-400 font-semibold text-center">
+                  Daily · Weekly · Monthly Packages
+                </span>
+              </div>
             </div>
           </div>
         </section>
