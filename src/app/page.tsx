@@ -454,7 +454,7 @@ export default async function HomePage() {
               <div className="w-2.5 h-6 bg-[#1C3D5A] dark:bg-sky-500 rounded-sm" />
               <div>
                 <h2 className="font-serif font-black text-2xl text-[#211D18] dark:text-white">
-                  Show All News (తాజా వార్తల సమాహారం)
+                  All News
                 </h2>
                 <p className="text-xs text-[#6F675C] dark:text-slate-400">
                   సమగ్ర ప్రాంతీయ, రాష్ట్ర మరియు జాతీయ నిరంతర వార్తా ప్రవాహం
