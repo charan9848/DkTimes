@@ -71,7 +71,7 @@ export default function AppMenuDrawer({
               <img
                 src="/logo.png"
                 alt="DK Times Emblem"
-                className="w-8 h-8 rounded-lg shadow-sm"
+                className="w-11 h-11 rounded-xl shadow-md shrink-0"
               />
               <div>
                 <h2 className="font-serif font-black text-base text-[#1C3D5A] dark:text-sky-400 leading-tight">

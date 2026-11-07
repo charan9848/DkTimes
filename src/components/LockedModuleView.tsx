@@ -20,9 +20,12 @@ export default function LockedModuleView({
         {/* Subtle decorative background glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 dark:bg-amber-400/5 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Lock Emblem */}
-        <div className="relative mx-auto w-20 h-20 rounded-2xl bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6 shadow-sm">
-          <Lock size={36} className="animate-pulse" />
+        {/* Official Brand Emblem with Lock Indicator */}
+        <div className="relative mx-auto w-24 h-24 rounded-2xl bg-white dark:bg-neutral-900 border border-amber-300 dark:border-amber-700/60 p-2 shadow-md flex items-center justify-center mb-6">
+          <img src="/logo.png" alt="DK Times Official Crest" className="w-full h-full object-contain rounded-xl" />
+          <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md border-2 border-white dark:border-[#141414]">
+            <Lock size={16} />
+          </div>
         </div>
 
         {/* Eyebrow Pill */}

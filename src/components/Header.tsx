@@ -166,18 +166,18 @@ export default function Header() {
 
       {/* Main Masthead Logo with Official Emblem */}
       <header className="bg-[#FFFDF7] dark:bg-[#121212] border-b border-[rgba(33,29,24,0.1)] dark:border-white/10 transition-colors">
-        <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-4 md:py-5 flex flex-col items-center justify-center">
-          <Link href="/" className="flex items-center gap-3 group">
+        <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-5 sm:py-6 md:py-7 flex flex-col items-center justify-center">
+          <Link href="/" className="flex items-center gap-3.5 sm:gap-4 md:gap-5 group">
             <img
               src="/logo.png"
               alt="DK Times Official Logo"
-              className="w-9 h-9 md:w-12 md:h-12 rounded-xl shadow-sm group-hover:scale-105 transition"
+              className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-2xl shadow-md group-hover:scale-105 transition duration-300 shrink-0"
             />
             <div className="text-left">
-              <h1 className="font-serif font-black text-2xl md:text-4xl tracking-[-0.03em] text-[#1C3D5A] dark:text-sky-400 group-hover:opacity-90 transition leading-none">
+              <h1 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#1C3D5A] dark:text-sky-400 group-hover:opacity-90 transition leading-none">
                 DK TIMES
               </h1>
-              <p className="text-[#6F675C] dark:text-slate-400 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] mt-1">
+              <p className="text-[#6F675C] dark:text-slate-400 text-[10px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.22em] mt-1 sm:mt-1.5">
                 The Voice of Telangana &amp; Andhra Pradesh
               </p>
             </div>

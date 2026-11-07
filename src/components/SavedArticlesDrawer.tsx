@@ -17,11 +17,16 @@ export default function SavedArticlesDrawer() {
         <div>
           {/* Header */}
           <div className="flex items-center justify-between pb-4 border-b border-[rgba(33,29,24,0.08)] dark:border-white/10">
-            <div className="flex items-center gap-2">
-              <Bookmark size={20} className="text-[#1C3D5A] dark:text-sky-400 fill-current" />
-              <h3 className="font-serif font-black text-xl text-[#211D18] dark:text-white">
-                Saved Stories ({bookmarks.length})
-              </h3>
+            <div className="flex items-center gap-2.5">
+              <img src="/logo.png" alt="DK Times" className="w-8 h-8 rounded-lg shadow-xs" />
+              <div>
+                <h3 className="font-serif font-black text-lg text-[#211D18] dark:text-white leading-tight">
+                  Saved Stories ({bookmarks.length})
+                </h3>
+                <span className="text-[9px] font-bold uppercase tracking-wider text-[#6F675C] dark:text-slate-400">
+                  DK Reading List
+                </span>
+              </div>
             </div>
             <button
               onClick={() => setDrawerOpen(false)}

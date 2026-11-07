@@ -6,9 +6,19 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h4 className="font-serif font-black text-2xl text-white mb-2 tracking-tight">DK TIMES</h4>
+            <div className="flex items-center gap-3.5 mb-3">
+              <img
+                src="/logo.png"
+                alt="DK Times Official Logo"
+                className="w-12 h-12 md:w-14 md:h-14 rounded-xl shadow-md bg-white p-1 shrink-0"
+              />
+              <div>
+                <h4 className="font-serif font-black text-2xl text-white tracking-tight leading-none">DK TIMES</h4>
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/50 mt-1">Telangana &amp; AP</p>
+              </div>
+            </div>
             <p className="text-[12px] leading-relaxed text-white/60">
-              The Voice of Telangana & Andhra Pradesh. Delivering unbiased, verified news across politics,
+              The Voice of Telangana &amp; Andhra Pradesh. Delivering unbiased, verified news across politics,
               governance, technology, local classifieds, and community developments.
             </p>
           </div>
