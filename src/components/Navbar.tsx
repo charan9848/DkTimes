@@ -22,7 +22,6 @@ const navItems: NavItem[] = [
   { label: 'Sports', href: '/news/sports', isLocked: true },
   { label: 'Jobs', href: '/jobs', isLocked: true },
   { label: 'Marketplace', href: '/marketplace', isLocked: true },
-  { label: 'Account', href: '/account', isLocked: true },
 ];
 
 export default function Navbar() {
