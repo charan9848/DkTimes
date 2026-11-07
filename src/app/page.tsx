@@ -447,18 +447,18 @@ export default async function HomePage() {
         </section>
 
         {/* ================= SHOW ALL NEWS CONTINUOUS STREAM ================= */}
-        <section className="pt-8 border-t-2 border-[rgba(33,29,24,0.15)] dark:border-white/10">
+        <section className="pt-6 border-t border-[rgba(33,29,24,0.1)] dark:border-white/10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <div>
-              <div className="flex items-center gap-2">
-                <Newspaper size={20} className="text-[#1C3D5A] dark:text-sky-400" />
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1C3D5A] dark:text-sky-400">
-                  Continuous Dispatch Stream
-                </span>
+            <div className="flex items-center gap-3">
+              <div className="w-2.5 h-6 bg-[#1C3D5A] dark:bg-sky-500 rounded-sm" />
+              <div>
+                <h2 className="font-serif font-black text-2xl text-[#211D18] dark:text-white">
+                  Show All News (తాజా వార్తల సమాహారం)
+                </h2>
+                <p className="text-xs text-[#6F675C] dark:text-slate-400">
+                  సమగ్ర ప్రాంతీయ, రాష్ట్ర మరియు జాతీయ నిరంతర వార్తా ప్రవాహం
+                </p>
               </div>
-              <h2 className="font-serif font-black text-2xl md:text-3xl text-[#211D18] dark:text-white mt-1">
-                Show All News (తాజా వార్తల సమాహారం)
-              </h2>
             </div>
             <Link
               href="/news"
