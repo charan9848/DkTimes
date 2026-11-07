@@ -664,26 +664,6 @@ export default async function HomePage() {
             </div>
           </div>
         </section>
-
-        {/* ================= SPONSORED BANNER ================= */}
-        <section className="pt-6">
-          <div className="bg-gradient-to-r from-[#1C3D5A] to-[#142A3E] dark:from-[#0F172A] dark:to-[#1E293B] text-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
-            <div>
-              <span className="text-[9px] font-black uppercase tracking-[0.25em] text-white/50 mb-1 block">
-                Sponsored Partner
-              </span>
-              <h3 className="font-serif font-bold text-xl md:text-2xl">
-                HMDA Approved Plots in Greater Hyderabad
-              </h3>
-              <p className="text-white/70 text-xs md:text-sm mt-1">
-                Gated community layouts starting from ₹18 Lakhs near Shamshabad Regional Ring Road.
-              </p>
-            </div>
-            <button className="bg-white text-[#1C3D5A] font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl hover:bg-white/90 transition shrink-0 cursor-pointer">
-              Enquire Now →
-            </button>
-          </div>
-        </section>
       </div>
     </main>
   );
