@@ -167,11 +167,11 @@ export default function Header() {
       {/* Main Masthead Logo with Official Emblem */}
       <header className="bg-[#FFFDF7] dark:bg-[#121212] border-b border-[rgba(33,29,24,0.1)] dark:border-white/10 transition-colors">
         <div className="mx-auto max-w-[1400px] px-4 md:px-6 py-5 sm:py-6 md:py-7 flex flex-col items-center justify-center">
-          <Link href="/" className="flex items-center gap-3.5 sm:gap-4 md:gap-5 group">
+          <Link href="/" className="flex items-center gap-4 sm:gap-5 md:gap-6 group">
             <img
               src="/logo.png"
               alt="DK Times Official Logo"
-              className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-2xl shadow-md group-hover:scale-105 transition duration-300 shrink-0"
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-2xl md:rounded-3xl shadow-lg group-hover:scale-105 transition duration-300 shrink-0"
             />
             <div className="text-left">
               <h1 className="font-serif font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-[#1C3D5A] dark:text-sky-400 group-hover:opacity-90 transition leading-none">

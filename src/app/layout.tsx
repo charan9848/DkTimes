@@ -28,11 +28,25 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://dktimesnews.com'),
   icons: {
     icon: [
-      { url: '/logo.png', sizes: 'any' },
-      { url: '/logo.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/logo.png', type: 'image/png', sizes: 'any' },
     ],
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  openGraph: {
+    title: 'DK Times — The Voice of Telangana & Andhra Pradesh',
+    description: 'Real-time verified news from Telangana, Andhra Pradesh, Politics, Technology, and Jobs.',
+    images: ['/logo.png'],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'DK Times — The Voice of Telangana & Andhra Pradesh',
+    images: ['/logo.png'],
   },
 };
 
@@ -44,9 +58,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable} h-full`}>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/logo.png" type="image/png" />
-        <link rel="shortcut icon" href="/logo.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

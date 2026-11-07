@@ -29,8 +29,16 @@ export default function PhoneAuthModal({ isOpen, onClose }: Props) {
           <X size={18} />
         </button>
 
-        <div className="mx-auto w-16 h-16 rounded-2xl bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-4 shadow-sm">
-          <Lock size={28} className="animate-pulse" />
+        {/* Branded Logo with Lock Indicator */}
+        <div className="relative mx-auto w-20 h-20 mb-4">
+          <img
+            src="/logo.png"
+            alt="DK Times Official Logo"
+            className="w-20 h-20 rounded-2xl shadow-md border-2 border-amber-500/30 object-cover"
+          />
+          <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md border-2 border-[#FFFDF7] dark:border-[#141414]">
+            <Lock size={16} className="animate-pulse" />
+          </div>
         </div>
 
         <div className="inline-flex items-center gap-1.5 bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-300 border border-amber-300 dark:border-amber-700 px-3 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider mb-3">
