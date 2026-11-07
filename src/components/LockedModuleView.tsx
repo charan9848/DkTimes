@@ -37,7 +37,7 @@ export default function LockedModuleView({
 
         {/* Description */}
         <p className="text-sm md:text-base text-[#6F675C] dark:text-slate-300 max-w-xl mx-auto mt-3 leading-relaxed">
-          {description} The Core Reader Portal (Home, All News, Telangana, and Andhra Pradesh) is live. Full activation of this module requires the Phase 2 deployment agreement.
+          {description} The Core Reader Portal (Home, Telangana, and Andhra Pradesh) is live. Full activation of this module requires the Phase 2 deployment agreement.
         </p>
 
         {/* Feature Preview Card */}

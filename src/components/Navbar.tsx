@@ -13,6 +13,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
+  { label: 'All News', href: '/news', isLocked: true },
   { label: 'Telangana', href: '/news/telangana' },
   { label: 'Andhra Pradesh', href: '/news/andhra_pradesh' },
   { label: 'Politics', href: '/news/politics', isLocked: true },
@@ -21,6 +22,7 @@ const navItems: NavItem[] = [
   { label: 'Sports', href: '/news/sports', isLocked: true },
   { label: 'Jobs', href: '/jobs', isLocked: true },
   { label: 'Marketplace', href: '/marketplace', isLocked: true },
+  { label: 'Account', href: '/account', isLocked: true },
 ];
 
 export default function Navbar() {

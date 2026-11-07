@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import { useBookmarks } from '@/context/BookmarkContext';
-import { Search, Bookmark, Globe, Sun, Moon, Menu, User, Phone } from 'lucide-react';
+import { Search, Bookmark, Globe, Sun, Moon, Menu, User, Phone, Lock } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import SavedArticlesDrawer from './SavedArticlesDrawer';
 import AppMenuDrawer from './AppMenuDrawer';
@@ -104,11 +104,11 @@ export default function Header() {
               )}
             </button>
 
-            {/* Replaced Sign In / Register with Unified App Menu & Account Button */}
+            {/* Replaced Sign In / Register with Unified App Menu & Account Button (Phase 2 Preview) */}
             <button
               onClick={() => setMenuDrawerOpen(true)}
-              className="flex items-center gap-1.5 bg-white/15 hover:bg-white/25 active:scale-95 text-white transition rounded-full px-3 py-1 text-[11px] font-bold shadow-xs cursor-pointer"
-              title="Open Account, Preferences & Info Menu"
+              className="flex items-center gap-1.5 bg-white/15 hover:bg-white/25 active:scale-95 text-white transition rounded-full px-2.5 sm:px-3 py-1 text-[11px] font-bold shadow-xs cursor-pointer"
+              title="Open Account Menu · Phase 2 Locked Preview"
             >
               {user ? (
                 <div className="flex items-center gap-1.5">
@@ -118,11 +118,25 @@ export default function Header() {
                   <span className="hidden sm:inline normal-case">
                     {user.phoneNumber ? user.phoneNumber.slice(-4) : 'Account'}
                   </span>
+                  <span
+                    className="inline-flex items-center gap-0.5 bg-amber-400/20 text-amber-300 border border-amber-400/30 px-1 py-0.5 rounded text-[8px] font-black tracking-normal ml-0.5"
+                    title="Phase 2 Module · Preview"
+                  >
+                    <Lock size={8} />
+                    <span className="hidden sm:inline text-[7px] tracking-wider">PREVIEW</span>
+                  </span>
                 </div>
               ) : (
                 <div className="flex items-center gap-1.5">
                   <User size={13} />
                   <span>Account</span>
+                  <span
+                    className="inline-flex items-center gap-0.5 bg-amber-400/20 text-amber-300 border border-amber-400/30 px-1 py-0.5 rounded text-[8px] font-black tracking-normal ml-0.5"
+                    title="Phase 2 Module · Preview"
+                  >
+                    <Lock size={8} />
+                    <span className="hidden sm:inline text-[7px] tracking-wider">PREVIEW</span>
+                  </span>
                 </div>
               )}
               <Menu size={13} className="text-white/70 ml-0.5" />
