@@ -446,6 +446,80 @@ export default async function HomePage() {
           </div>
         </section>
 
+        {/* ================= SHOW ALL NEWS CONTINUOUS STREAM ================= */}
+        <section className="pt-8 border-t-2 border-[rgba(33,29,24,0.15)] dark:border-white/10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <div className="flex items-center gap-2">
+                <Newspaper size={20} className="text-[#1C3D5A] dark:text-sky-400" />
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1C3D5A] dark:text-sky-400">
+                  Continuous Dispatch Stream
+                </span>
+              </div>
+              <h2 className="font-serif font-black text-2xl md:text-3xl text-[#211D18] dark:text-white mt-1">
+                Show All News (తాజా వార్తల సమాహారం)
+              </h2>
+            </div>
+            <Link
+              href="/news"
+              className="inline-flex items-center gap-2 bg-[#1C3D5A] hover:bg-[#142A3E] dark:bg-sky-600 dark:hover:bg-sky-500 text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-sm transition shrink-0"
+            >
+              <Lock size={13} className="text-amber-300" />
+              <span>Browse All 500 Stories Archive</span>
+              <span className="bg-amber-400/20 text-amber-300 text-[9px] px-1.5 py-0.5 rounded font-black">PHASE 2</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {continuousAllNews.map((story) => (
+              <article
+                key={story.id}
+                className="bg-[#FFFDF7] dark:bg-[#141414] rounded-xl border border-[rgba(33,29,24,0.1)] dark:border-white/10 overflow-hidden shadow-sm hover:border-[#1C3D5A]/40 dark:hover:border-sky-500/40 transition flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="aspect-[16/10] bg-neutral-900 overflow-hidden relative">
+                    <img
+                      src={story.imageUrl || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600'}
+                      alt={story.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center justify-between text-[10px] text-[#6F675C] dark:text-slate-400 mb-1.5 font-medium">
+                      <span className="font-bold uppercase tracking-wider text-[#1C3D5A] dark:text-sky-400">
+                        {story.region || story.category || 'News'}
+                      </span>
+                      <TimeAgo timestamp={story.publishedAt} />
+                    </div>
+                    <Link href={`/article/${story.id}`}>
+                      <h3 className="font-serif font-bold text-base text-[#211D18] dark:text-slate-100 group-hover:text-[#1C3D5A] dark:group-hover:text-sky-400 transition line-clamp-2 leading-snug">
+                        {story.title}
+                      </h3>
+                    </Link>
+                    <p className="text-xs text-[#6F675C] dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                      {story.summary}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-4 py-3 border-t border-[rgba(33,29,24,0.06)] dark:border-white/10 flex items-center justify-between text-xs">
+                  <span className="text-[10px] text-[#6F675C] dark:text-slate-400 font-medium">
+                    {formatEditorialDate(story.publishedAt)}
+                  </span>
+                  <Link
+                    href={`/article/${story.id}`}
+                    className="font-bold text-xs text-[#1C3D5A] dark:text-sky-400 group-hover:underline flex items-center gap-1"
+                  >
+                    Read More <ArrowRight size={12} />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* ================= DK SHORTS SECTION (ONLY DISPLAYED IF SHORTS EXIST) ================= */}
         {shorts && shorts.length > 0 && (
           <section className="pt-6 border-t border-[rgba(33,29,24,0.1)] dark:border-white/10">
